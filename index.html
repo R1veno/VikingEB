@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breno | Web Architect & Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --accent: #ffffff;
+            --secondary: #111111;
+            --border: #333333;
+            --gray: #888888;
+            --highlight: #00ff9d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background: var(--bg); 
+            color: var(--accent); 
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 30px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100; mix-blend-mode: difference;
+        }
+        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -1px; }
+        
+        header {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; padding: 0 10%;
+        }
+        header h1 { font-size: clamp(3rem, 12vw, 8rem); font-weight: 700; letter-spacing: -4px; line-height: 0.9; }
+        header .dev-tag { color: var(--gray); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
+
+        .container { padding: 100px 10%; }
+
+        /* Métrica de Performance */
+        .metrics {
+            display: flex; justify-content: space-between; margin: 100px 0;
+            border: 1px solid var(--border); padding: 50px; border-radius: 4px;
+            background: linear-gradient(to right, #050505, #000);
+        }
+        .metric-item h4 { font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; }
+        .metric-item p { color: var(--gray); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Projetos */
+        .project-row { display: flex; flex-direction: column; gap: 150px; }
+        .project-item {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px;
+            align-items: center;
+        }
+        .project-info h3 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1; letter-spacing: -2px; }
+        .project-description { color: var(--gray); font-size: 1.1rem; margin-bottom: 30px; max-width: 500px; }
+        
+        .project-visual {
+            width: 100%; height: 450px; background: var(--secondary);
+            border: 1px solid var(--border); border-radius: 8px;
+            position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        
+        .visual-pattern {
+            width: 80%; height: 60%;
+            border: 1px solid #222;
+            background-image: radial-gradient(var(--border) 1px, transparent 1px);
+            background-size: 20px 20px;
+            position: relative;
+        }
+        .visual-pattern::before {
+            content: "SYSTEM_ACTIVE"; position: absolute; top: -25px; left: 0;
+            font-size: 10px; color: var(--highlight); font-family: monospace;
+        }
+
+        .tech-tag { 
+            display: inline-block; border: 1px solid var(--border); 
+            padding: 5px 12px; font-size: 0.8rem; color: var(--highlight);
+            margin-right: 10px; margin-bottom: 10px;
+        }
+
+        footer { padding: 100px 10%; border-top: 1px solid var(--border); }
+        .contact-trigger {
+            font-size: clamp(2rem, 6vw, 5rem); text-decoration: none;
+            color: var(--accent); transition: 0.4s; font-weight: 700; letter-spacing: -3px;
+        }
+        .contact-trigger:hover { color: var(--highlight); padding-left: 30px; }
+
+        @media (max-width: 1024px) {
+            .project-item { grid-template-columns: 1fr; gap: 40px; }
+            .metrics { flex-wrap: wrap; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BRENO // ARCHITECT</div>
+        <div class="nav-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=breninhogermano@gmail.com" target="_blank" style="color:white; text-decoration: none; font-weight: 700;">GMAIL DIRECT</a>
+        </div>
+    </nav>
+
+    <header>
+        <span class="dev-tag">Senior Software Developer</span>
+        <h1>BRENO<br>ENGINE.</h1>
+        <p style="max-width: 600px; margin-top: 20px; color: var(--gray); font-size: 1.3rem;">
+            Especialista em criar infraestruturas digitais de alta performance. Onde outros veem apenas HTML, eu projeto arquiteturas escaláveis com foco em tempo de resposta zero.
+        </p>
+    </header>
+
+    <div class="container">
+        
+        <div class="metrics">
+            <div class="metric-item"><h4>100%</h4><p>SEO SCORE</p></div>
+            <div class="metric-item"><h4>&lt;1s</h4><p>LOAD TIME</p></div>
+            <div class="metric-item"><h4>W3C</h4><p>VALID CODE</p></div>
+        </div>
+
+        <section id="projects">
+            <div class="project-row">
+                
+                <div class="project-item">
+                    <div class="project-visual">
+                        <div class="visual-pattern" style="border-color: var(--highlight);"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Core Commerce Engine</h3>
+                        <p class="project-description">
+                            Arquitetura de vendas otimizada para conversão. Implementação de renderização crítica e redução de 40% no bundle final de estilos.
+                        </p>
+                        <div>
+                            <span class="tech-tag">SEMANTIC UI</span>
+                            <span class="tech-tag">CSS TOKENS</span>
+                            <span class="tech-tag">VANILLA JS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" style="direction: rtl; text-align: left;">
+                    <div class="project-visual">
+                        <div class="visual-pattern" style="opacity: 0.5;"></div>
+                    </div>
+                    <div class="project-info" style="direction: ltr;">
+                        <h3>Real-time Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Visualização de dados complexos com latência mínima. Sistema modular construído para suportar milhares de requisições simultâneas.
+                        </p>
+                        <div>
+                            <span class="tech-tag">WEB WORKERS</span>
+                            <span class="tech-tag">SVG DYNAMICS</span>
+                            <span class="tech-tag">A11Y COMPLIANT</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p style="margin-bottom: 20px; color: var(--gray); text-transform: uppercase; letter-spacing: 2px;">Inicie uma consultoria</p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=breninhogermano@gmail.com" target="_blank" class="contact-trigger">Fale com Breno →</a>
+        
+        <div style="margin-top: 100px; display: flex; justify-content: space-between; color: #222; font-weight: 700;">
+            <p>BRENO / DEVELOPER</p>
+            <p>2025 © ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+
+</body>
+</html>
